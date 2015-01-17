@@ -12,15 +12,21 @@ namespace WCF.Demo
     {
         static void Main(string[] args)
         {
-            //定义一个http方式的代理，配置使用httpDataService中的定义 
-            var httpProxy = new ChannelFactory<Server.IData>("httpDataService").CreateChannel();
-            Console.WriteLine(httpProxy.SayHello("WCF"));
-            ((IChannel)httpProxy).Close();
+            //定义绑定与服务地址 
+            Binding httpBinding = new BasicHttpBinding();
+            EndpointAddress httpAddr = new EndpointAddress("http://localhost:8080/wcf");
+            //利用ChannelFactory创建一个IData的代理对象，指定binding与address，而不用配置文件中的  
+            var proxy = new ChannelFactory<Server.IData>(httpBinding, httpAddr).CreateChannel();
+            //调用SayHello方法并关闭连接 
+            Console.WriteLine(proxy.SayHello("WCF"));
+            ((IChannel)proxy).Close();
 
-            //定义一个tcp方式的代理，配置使用tcpDataService中的定义 
-            var tcpProxy = new ChannelFactory<Server.IData>("tcpDataService").CreateChannel();
-            Console.WriteLine(tcpProxy.SayHello("WCF"));
-            ((IChannel)tcpProxy).Close();
+            //换TCP绑定试试 
+            Binding tcpBinding = new NetTcpBinding();
+            EndpointAddress tcpAddr = new EndpointAddress("net.tcp://localhost:8081/wcf");
+            var proxy2 = new ChannelFactory<Server.IData>(httpBinding, httpAddr).CreateChannel();
+            Console.WriteLine(proxy2.SayHello("WCF"));
+            ((IChannel)proxy2).Close();
             Console.ReadKey();
         }
     }
