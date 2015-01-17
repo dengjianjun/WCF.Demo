@@ -6,3 +6,5 @@ D:\DotNet\Code\WCF.Demo\WCF.Demo\bin\Debug\Server.exe
 D:\DotNet\Code\WCF.Demo\WCF.Demo\bin\Debug\Server.pdb
 D:\DotNet\Code\WCF.Demo\WCF.Demo\obj\Debug\WCF.Demo.exe
 D:\DotNet\Code\WCF.Demo\WCF.Demo\obj\Debug\WCF.Demo.pdb
+D:\DotNet\Code\WCF.Demo\WCF.Demo\bin\Debug\ContractModel.dll
+D:\DotNet\Code\WCF.Demo\WCF.Demo\bin\Debug\ContractModel.pdb

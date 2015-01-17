@@ -4,3 +4,5 @@ D:\DotNet\Code\WCF.Demo\Server\bin\Debug\Server.pdb
 D:\DotNet\Code\WCF.Demo\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
 D:\DotNet\Code\WCF.Demo\Server\obj\Debug\Server.exe
 D:\DotNet\Code\WCF.Demo\Server\obj\Debug\Server.pdb
+D:\DotNet\Code\WCF.Demo\Server\bin\Debug\ContractModel.dll
+D:\DotNet\Code\WCF.Demo\Server\bin\Debug\ContractModel.pdb

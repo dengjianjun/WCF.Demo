@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ContractModel;
 
 namespace Server
 {
@@ -14,6 +15,12 @@ namespace Server
         public string SayHello(string userName)
         {
             return string.Format("Hello {0}.", userName);
+        }
+
+        public UserEntity SayHello(UserEntity userEntity)
+        {
+            userEntity.Age++;
+            return userEntity;
         }
     } 
 }

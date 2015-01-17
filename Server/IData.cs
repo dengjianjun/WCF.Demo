@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ServiceModel; 
+using System.ServiceModel;
+using ContractModel;
 
 namespace Server
 {
@@ -16,7 +17,10 @@ namespace Server
         /// <summary>
         /// 用OperationContract来标记此方法是操作契约
         /// </summary>
-        [OperationContract]
+        [OperationContract(Name = "SayHello1")]
         string SayHello(string userName);
+
+        [OperationContract(Name = "SayHello2")]
+        UserEntity SayHello(UserEntity userEntity);
     } 
 }
