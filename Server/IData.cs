@@ -11,7 +11,7 @@ namespace Server
     /// <summary>
     /// 用ServiceContract来标记此接口是WCF的服务契约，可以像WebService一样指定一个Namespace，如果不指定，就是默认的http://tempuri.org
     /// </summary>
-    [ServiceContract(Namespace = "WCF.Demo", CallbackContract = typeof(IDataCallback), SessionMode = SessionMode.Allowed)]
+    [ServiceContract(Namespace = "WCF.Demo")] 
     public interface IData
     {
         /// <summary>
@@ -22,6 +22,9 @@ namespace Server
 
         [OperationContract(Name = "SayHello2")]
         UserEntity SayHello(UserEntity userEntity);
+
+        [OperationContract]
+        int GetCounter();
 
         /// <summary> 
         /// IsOneWay = true 表明这是一个单向调用，注意返回值是void，因为既然是单向调用，客户端肯定不会等待接收返回值的 
